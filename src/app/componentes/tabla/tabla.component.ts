@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TableModule } from 'primeng/table';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'app-tabla',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TablaComponent implements OnInit {
 
-  constructor() { }
+  items: any;
+
+  constructor(public miHttp: Http) { }
 
   ngOnInit() {
+    this.miHttp.get('http://localhost/apiparcial2018/traerTodosLosItems')
+      .toPromise()
+      .then(data => {
+        this.items = data.json();
+        console.log(this.items)
+      })
   }
 
 }
