@@ -11,10 +11,13 @@ import { Http } from '@angular/http';
 export class TablaComponent implements OnInit {
 
   items: any;
+  cols: any;
 
   constructor(public miHttp: Http) { }
 
   ngOnInit() {
+    this.cols = [""]
+
     this.miHttp.get('http://localhost/apiparcial2018/traerTodosLosItems')
       .toPromise()
       .then(data => {
