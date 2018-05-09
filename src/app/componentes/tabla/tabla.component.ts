@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {DataTableModule} from 'primeng/datatable';
+import { DataTableModule } from 'primeng/datatable';
+import { TableModule } from 'primeng/table';
 import { Http } from '@angular/http';
 
 @Component({
