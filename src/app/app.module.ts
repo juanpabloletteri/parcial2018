@@ -19,6 +19,7 @@ import { MenuComponent } from './componentes/menu/menu.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { ListadoVehiculosComponent } from './componentes/listado-vehiculos/listado-vehiculos.component';
 import { AltaComponent } from './componentes/alta/alta.component';
+import { BuscarComponent } from './componentes/buscar/buscar.component';
 
 const config: Routes = [
   {
@@ -33,6 +34,11 @@ const config: Routes = [
     path: 'alta',
     component: AltaComponent
   }
+  ,
+  {
+    path: 'buscar',
+    component: BuscarComponent
+  }
 ]
 
 @NgModule({
@@ -42,7 +48,8 @@ const config: Routes = [
     MenuComponent,
     HomeComponent,
     ListadoVehiculosComponent,
-    AltaComponent
+    AltaComponent,
+    BuscarComponent
   ],
   imports: [
     BrowserModule,
