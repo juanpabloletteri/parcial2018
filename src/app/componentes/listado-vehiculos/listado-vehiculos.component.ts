@@ -3,6 +3,7 @@ import { DataTableModule } from 'primeng/datatable';
 import { TableModule } from 'primeng/table';
 import { Http } from '@angular/http';
 import { MiHttpServiceService } from '../../servicios/mi-http-service.service'
+import { RouterModule, Route, Routes, Router } from '@angular/router';
 
 @Component({
   selector: 'app-listado-vehiculos',
@@ -14,7 +15,7 @@ export class ListadoVehiculosComponent implements OnInit {
   items: any;
   cols: any;
 
-  constructor(public miHttp: Http, public nuevoHttp: MiHttpServiceService) { }
+  constructor(public miHttp: Http, public nuevoHttp: MiHttpServiceService,public rute: Router) { }
 
   ngOnInit() {
     this.cols = [""]
@@ -34,6 +35,11 @@ export class ListadoVehiculosComponent implements OnInit {
        })*/
   }
   Borrar(id) {
-alert(id)
+    this.miHttp.post('http://localhost/apiparcial2018/borrarVehiculo', {id:id})
+      .toPromise()
+      .then(data => {
+        console.log(data);
+      })
+      this.rute.navigate(['tabla']);
   }
 }

@@ -1,6 +1,7 @@
 <p>
   alta works!
 </p>
+
 <div class="ui-inputgroup">
   <span class="ui-inputgroup-addon">
     <i class="fa fa-car"></i>
@@ -19,6 +20,13 @@
 </div>
 <br>
 <br>
+
+<select name="tipo" [(ngModel)]="mivehiculo.tipo">
+  <option value="" disabled selected>Choose your option</option>
+  <option value="auto">Auto</option>
+  <option value="moto">Moto</option>
+</select>
+
 <div class="ui-inputgroup">
   <span class="ui-inputgroup-addon">
     <i class="fa fa-calendar"></i>
@@ -28,6 +36,8 @@
 <br>
 <br>
 
+
 <p-button label="Ingresar" (click)="Ingresar()"></p-button>
 
-<br> <br>
+<br>
+<br>

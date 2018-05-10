@@ -6,6 +6,7 @@ import { ButtonModule } from 'primeng/button';
 import { DataTableModule } from 'primeng/datatable';
 import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
+import { MultiSelectModule } from 'primeng/multiselect';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { InputTextModule } from 'primeng/inputtext';
     ButtonModule,
     DataTableModule,
     TableModule,
-    InputTextModule
+    InputTextModule,
+    MultiSelectModule
   ],
   exports: [
     CommonModule,
@@ -22,7 +24,8 @@ import { InputTextModule } from 'primeng/inputtext';
     ButtonModule,
     DataTableModule,
     TableModule,
-    InputTextModule
+    InputTextModule,
+    MultiSelectModule
   ],
   declarations: []
 })
