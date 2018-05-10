@@ -15,17 +15,11 @@ export class ListadoVehiculosComponent implements OnInit {
   items: any;
   cols: any;
 
-  constructor(public miHttp: Http, public nuevoHttp: MiHttpServiceService,public rute: Router) { }
+
+  constructor(public miHttp: Http, public nuevoHttp: MiHttpServiceService, public rute: Router) { }
 
   ngOnInit() {
-    this.cols = [""]
-
-    this.nuevoHttp.httpGetP('http://localhost/apiparcial2018/traerTodosLosItems')
-      //.toPromise()
-      .then(data => {
-        this.items = data;
-        console.log(this.items)
-      })
+    this.DibujarTabla()
 
     /* this.miHttp.get('http://localhost/apiparcial2018/traerTodosLosItems')
        .toPromise()
@@ -35,11 +29,25 @@ export class ListadoVehiculosComponent implements OnInit {
        })*/
   }
   Borrar(id) {
-    this.miHttp.post('http://localhost/apiparcial2018/borrarVehiculo', {id:id})
+    this.miHttp.post('http://localhost/apiparcial2018/borrarVehiculo', { id: id })
       .toPromise()
       .then(data => {
+        this.items = null;
+         this.DibujarTabla()
         console.log(data);
       })
-      this.rute.navigate(['tabla']);
+    
+   
+
+  }
+  DibujarTabla() {
+    this.cols = [""]
+
+    this.nuevoHttp.httpGetP('http://localhost/apiparcial2018/traerTodosLosItems')
+      //.toPromise()
+      .then(data => {
+        this.items = data;
+        console.log(this.items)
+      })
   }
 }
