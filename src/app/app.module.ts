@@ -16,6 +16,7 @@ import { TablaComponent } from './componentes/tabla/tabla.component';
 import { MenuComponent } from './componentes/menu/menu.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { ListadoVehiculosComponent } from './componentes/listado-vehiculos/listado-vehiculos.component';
+import { AltaComponent } from './componentes/alta/alta.component';
 
 const config: Routes = [
   {
@@ -25,6 +26,10 @@ const config: Routes = [
   {
     path: 'tabla',
     component: ListadoVehiculosComponent
+  },
+  {
+    path: 'alta',
+    component: AltaComponent
   }
 ]
 
@@ -34,7 +39,8 @@ const config: Routes = [
     TablaComponent,
     MenuComponent,
     HomeComponent,
-    ListadoVehiculosComponent
+    ListadoVehiculosComponent,
+    AltaComponent
   ],
   imports: [
     BrowserModule,
