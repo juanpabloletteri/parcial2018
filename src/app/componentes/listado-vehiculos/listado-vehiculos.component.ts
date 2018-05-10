@@ -14,7 +14,7 @@ export class ListadoVehiculosComponent implements OnInit {
   items: any;
   cols: any;
 
-  constructor(public miHttp: Http, public nuevoHttp:MiHttpServiceService) { }
+  constructor(public miHttp: Http, public nuevoHttp: MiHttpServiceService) { }
 
   ngOnInit() {
     this.cols = [""]
@@ -26,12 +26,14 @@ export class ListadoVehiculosComponent implements OnInit {
         console.log(this.items)
       })
 
-   /* this.miHttp.get('http://localhost/apiparcial2018/traerTodosLosItems')
-      .toPromise()
-      .then(data => {
-        this.items = data.json();
-        console.log(this.items)
-      })*/
+    /* this.miHttp.get('http://localhost/apiparcial2018/traerTodosLosItems')
+       .toPromise()
+       .then(data => {
+         this.items = data.json();
+         console.log(this.items)
+       })*/
   }
-
+  Borrar(id) {
+alert(id)
+  }
 }
