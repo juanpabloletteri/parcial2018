@@ -21,11 +21,10 @@ export class MiHttpServiceService {
 
   public httpPostP(url: string, objeto: any) {
     return this.http
-      .get(url)
-      .subscribe(data => {
-        console.log(data);
-        return data;
-      });
+      .post(url, objeto)
+      .toPromise()
+      .then(this.extractData)
+      .catch(this.handleError);
   }
 
   public httpGetO(url: string): Observable<Response> {
