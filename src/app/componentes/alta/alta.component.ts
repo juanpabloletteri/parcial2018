@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { vehiculo } from '../../clases/vehiculo';
 
 @Component({
   selector: 'app-alta',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AltaComponent implements OnInit {
 
-  constructor() { }
+  constructor(public mivehiculo: vehiculo) { }
 
   ngOnInit() {
-  }
 
+  }
+  Ingresar() {
+
+  }
 }

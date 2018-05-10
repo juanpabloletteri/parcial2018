@@ -11,6 +11,8 @@ import { RouterModule, Route, Routes } from '@angular/router';
 import { MiHttpServiceService } from './servicios/mi-http-service.service';
 import { ServicioVehiculosService } from './servicios/servicio-vehiculos.service'
 
+import { vehiculo } from './clases/vehiculo';
+
 import { AppComponent } from './app.component';
 import { TablaComponent } from './componentes/tabla/tabla.component';
 import { MenuComponent } from './componentes/menu/menu.component';
@@ -49,7 +51,7 @@ const config: Routes = [
     PrimengModule,
     RouterModule.forRoot(config)
   ],
-  providers: [MiHttpServiceService, ServicioVehiculosService],
+  providers: [MiHttpServiceService, ServicioVehiculosService, vehiculo],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

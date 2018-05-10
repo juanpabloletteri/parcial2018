@@ -1,3 +1,33 @@
 <p>
   alta works!
 </p>
+<div class="ui-inputgroup">
+  <span class="ui-inputgroup-addon">
+    <i class="fa fa-car"></i>
+  </span>
+  <input type="text" pInputText placeholder="Modelo" [(ngModel)]="mivehiculo.modelo">
+</div>
+
+<br>
+<br>
+
+<div class="ui-inputgroup">
+  <span class="ui-inputgroup-addon">
+    <i class="fa fa-motorcycle"></i>
+  </span>
+  <input type="text" pInputText placeholder="Tipo" [(ngModel)]="mivehiculo.tipo">
+</div>
+<br>
+<br>
+<div class="ui-inputgroup">
+  <span class="ui-inputgroup-addon">
+    <i class="fa fa-calendar"></i>
+  </span>
+  <input type="number" pInputText placeholder="Año" [(ngModel)]="mivehiculo.anio">
+</div>
+<br>
+<br>
+
+<p-button label="Ingresar" (click)="Ingresar()"></p-button>
+
+<br> <br>
