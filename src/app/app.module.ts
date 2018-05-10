@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { TablaComponent } from './componentes/tabla/tabla.component';
 import { MenuComponent } from './componentes/menu/menu.component';
 import { HomeComponent } from './componentes/home/home.component';
+import { ListadoVehiculosComponent } from './componentes/listado-vehiculos/listado-vehiculos.component';
 
 const config: Routes = [
   {
@@ -20,7 +21,7 @@ const config: Routes = [
   },
   {
     path:'tabla',
-    component: TablaComponent
+    component: ListadoVehiculosComponent
   }
 ]
 
@@ -29,7 +30,8 @@ const config: Routes = [
     AppComponent,
     TablaComponent,
     MenuComponent,
-    HomeComponent
+    HomeComponent,
+    ListadoVehiculosComponent
   ],
   imports: [
     BrowserModule,

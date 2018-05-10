@@ -1,0 +1,40 @@
+<p>
+  listado-vehiculos works!
+</p>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<h3 class="first">Tabla</h3>
+<p-table [value]="cols">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Modelo</th>
+      <th>Tipo</th>
+      <th>Año</th>
+      <th>Foto</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body">
+    <tr *ngFor="let item of items">
+      <td class="auto">{{item.modelo}}</td>
+      <td>{{item.tipo}}</td>
+      <td>{{item.anio}}</td>
+      <td>{{item.foto}}</td>
+    </tr>
+  </ng-template>
+</p-table>
+
+<table class="w3-table w3-bordered">
+  <tr>
+    <th>Modelo</th>
+    <th>Tipo</th>
+    <th>Año</th>
+    <th>Foto</th>
+  </tr>
+  <tr *ngFor="let item of items">
+    <td>{{item.modelo}}</td>
+    <td>{{item.tipo}}</td>
+    <td>{{item.anio}}</td>
+    <td>{{item.foto}}</td>
+  </tr>
+
+</table>
