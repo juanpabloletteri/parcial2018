@@ -8,6 +8,9 @@ import { PrimengModule } from './modulos/primeng/primeng.module';
 
 import { RouterModule, Route, Routes } from '@angular/router';
 
+import { MiHttpServiceService } from './servicios/mi-http-service.service';
+import { ServicioVehiculosService } from './servicios/servicio-vehiculos.service'
+
 import { AppComponent } from './app.component';
 import { TablaComponent } from './componentes/tabla/tabla.component';
 import { MenuComponent } from './componentes/menu/menu.component';
@@ -20,7 +23,7 @@ const config: Routes = [
     component: HomeComponent
   },
   {
-    path:'tabla',
+    path: 'tabla',
     component: ListadoVehiculosComponent
   }
 ]
@@ -40,7 +43,7 @@ const config: Routes = [
     PrimengModule,
     RouterModule.forRoot(config)
   ],
-  providers: [],
+  providers: [MiHttpServiceService, ServicioVehiculosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
