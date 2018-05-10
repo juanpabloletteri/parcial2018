@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { vehiculo } from '../../clases/vehiculo';
 import { MiHttpServiceService } from '../../servicios/mi-http-service.service'
-
+import swal from 'sweetalert2'
 @Component({
   selector: 'app-alta',
   templateUrl: './alta.component.html',
@@ -12,7 +12,7 @@ export class AltaComponent implements OnInit {
   constructor(public mivehiculo: vehiculo, public miHttp: MiHttpServiceService) { }
 
   ngOnInit() {
-
+    this.mivehiculo.tipo = 'auto';
   }
   Ingresar() {
 
@@ -26,6 +26,10 @@ export class AltaComponent implements OnInit {
       .then(data => {
         console.log(data)
       })
-
+    swal(
+      'Felicidades!',
+      'Vehiculo agregado exitosamente!',
+      'success'
+    )
   }
 }

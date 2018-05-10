@@ -25,6 +25,7 @@
     "font-awesome": "^4.7.0",
     "primeng": "^5.2.6",
     "rxjs": "^5.5.6",
+    "sweetalert2": "^7.19.3",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {

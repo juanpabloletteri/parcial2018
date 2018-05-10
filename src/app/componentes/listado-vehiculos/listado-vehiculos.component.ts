@@ -4,6 +4,7 @@ import { TableModule } from 'primeng/table';
 import { Http } from '@angular/http';
 import { MiHttpServiceService } from '../../servicios/mi-http-service.service'
 import { RouterModule, Route, Routes, Router } from '@angular/router';
+import swal from 'sweetalert2'
 
 @Component({
   selector: 'app-listado-vehiculos',
@@ -32,6 +33,11 @@ export class ListadoVehiculosComponent implements OnInit {
     this.miHttp.post('http://localhost/apiparcial2018/borrarVehiculo', { id: id })
       .toPromise()
       .then(data => {
+        swal(
+          'Felicidades!',
+          'Vehiculo eliminado exitosamente!',
+          'success'
+        )
         this.items = null;
          this.DibujarTabla()
         console.log(data);
