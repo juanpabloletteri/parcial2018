@@ -1,7 +1,24 @@
 <p>
   buscar works!
 </p>
-<input type="text" [(ngModel)]="modelo" > {{modelo}}
+<input type="text" [(ngModel)]="modelo">
 <button (click)="buscar()">Buscar</button>
 
-{{mivehiculo.modelo}}
+<div class="w3-container">
+  <h2>Vehiculos encontrados</h2>
+
+  <table class="w3-table w3-bordered w3-striped w3-border test w3-hoverable">
+    <tr class="w3-red">
+      <th>ID</th>
+      <th>MODELO</th>
+      <th>TIPO</th>
+      <th>AÑO</th>
+    </tr>
+    <tr *ngFor="let item of items">
+      <td>{{item.id}}</td>
+      <td>{{item.modelo}}</td>
+      <td>{{item.tipo}}</td>
+      <td>{{item.anio}}</td>
+    </tr>
+  </table>
+</div>
