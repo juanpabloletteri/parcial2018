@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { vehiculo } from '../clases/vehiculo';
 import { MiHttpServiceService } from '../servicios/mi-http-service.service';
+import { promise } from 'protractor';
 @Injectable()
 export class ServicioVehiculosService {
 
@@ -37,11 +38,18 @@ export class ServicioVehiculosService {
   getfoto() {
     return this.vehiculo.foto;
   }
-  getListado(): Promise<Array<any>> {
+  ///////////////////////////
+  getListado(): Promise<any> {
     return this.miHttp.httpGetP('traerTodosLosItems')
       .then(data => {
         console.log(data)
         return data;
+      })
+  }
+  borrarVehiculo(id): Promise<any> {
+    return this.miHttp.httpPostP('borrarVehiculo', { id: id })
+      .then(data => {
+        console.log(data)
       })
   }
 }

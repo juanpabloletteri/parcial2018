@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataTableModule } from 'primeng/datatable';
 import { TableModule } from 'primeng/table';
-import { Http } from '@angular/http';
+//import { Http } from '@angular/http';
 //import { MiHttpServiceService } from '../../servicios/mi-http-service.service'
 import { RouterModule, Route, Routes, Router } from '@angular/router';
 import swal from 'sweetalert2'
@@ -18,21 +18,14 @@ export class ListadoVehiculosComponent implements OnInit {
   cols: any;
 
 
-  constructor(public miHttp: Http, private miVehiculo: ServicioVehiculosService, public rute: Router) { }
+  constructor(private miVehiculo: ServicioVehiculosService, public rute: Router) { }
 
   ngOnInit() {
     this.DibujarTabla()
-
-    /* this.miHttp.get('http://localhost/apiparcial2018/traerTodosLosItems')
-       .toPromise()
-       .then(data => {
-         this.items = data.json();
-         console.log(this.items)
-       })*/
   }
+
   Borrar(id) {
-    this.miHttp.post('http://localhost/apiparcial2018/borrarVehiculo', { id: id })
-      .toPromise()
+    this.miVehiculo.borrarVehiculo(id)
       .then(data => {
         swal(
           'Felicidades!',
@@ -43,6 +36,18 @@ export class ListadoVehiculosComponent implements OnInit {
         this.DibujarTabla()
         console.log(data);
       })
+    /* this.miHttp.post('http://localhost/apiparcial2018/borrarVehiculo', { id: id })
+       .toPromise()
+       .then(data => {
+         swal(
+           'Felicidades!',
+           'Vehiculo eliminado exitosamente!',
+           'success'
+         )
+         this.items = null;
+         this.DibujarTabla()
+         console.log(data);
+       })*/
   }
 
   DibujarTabla() {
