@@ -11,9 +11,11 @@ export class MiHttpServiceService {
 
   constructor(public http: Http) { }
 
+  ruta: string = 'http://localhost/apiparcial2018/';
+
   public httpGetP(url: string) {
     return this.http
-      .get(url)
+      .get(this.ruta + url)
       .toPromise()
       .then(this.extractData)
       .catch(this.handleError);
@@ -21,7 +23,7 @@ export class MiHttpServiceService {
 
   public httpPostP(url: string, objeto: any) {
     return this.http
-      .post(url, objeto)
+      .post(this.ruta + url, objeto)
       .toPromise()
       .then(this.extractData)
       .catch(this.handleError);

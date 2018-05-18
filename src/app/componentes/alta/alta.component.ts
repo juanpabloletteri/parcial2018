@@ -22,7 +22,7 @@ export class AltaComponent implements OnInit {
       anio: this.mivehiculo.anio,
       foto: '../../../assets/generica.jpg'
     }
-    this.miHttp.httpPostP('http://localhost/apiparcial2018/altaItem', data)
+    this.miHttp.httpPostP('altaItem', data)
       .then(data => {
         console.log(data)
       })

@@ -49,7 +49,7 @@ export class ListadoVehiculosComponent implements OnInit {
   DibujarTabla() {
     this.cols = [""]
 
-    this.nuevoHttp.httpGetP('http://localhost/apiparcial2018/traerTodosLosItems')
+    this.nuevoHttp.httpGetP('traerTodosLosItems')
       //.toPromise()
       .then(data => {
         this.items = data;
