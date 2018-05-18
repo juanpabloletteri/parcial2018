@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { DataTableModule } from 'primeng/datatable';
 import { TableModule } from 'primeng/table';
 import { Http } from '@angular/http';
-import { MiHttpServiceService } from '../../servicios/mi-http-service.service'
+//import { MiHttpServiceService } from '../../servicios/mi-http-service.service'
 import { RouterModule, Route, Routes, Router } from '@angular/router';
 import swal from 'sweetalert2'
+import { ServicioVehiculosService } from '../../servicios/servicio-vehiculos.service';
 
 @Component({
   selector: 'app-listado-vehiculos',
@@ -17,7 +18,7 @@ export class ListadoVehiculosComponent implements OnInit {
   cols: any;
 
 
-  constructor(public miHttp: Http, public nuevoHttp: MiHttpServiceService, public rute: Router) { }
+  constructor(public miHttp: Http, private miVehiculo: ServicioVehiculosService, public rute: Router) { }
 
   ngOnInit() {
     this.DibujarTabla()
@@ -39,21 +40,18 @@ export class ListadoVehiculosComponent implements OnInit {
           'success'
         )
         this.items = null;
-         this.DibujarTabla()
+        this.DibujarTabla()
         console.log(data);
       })
-    
-   
-
   }
+
   DibujarTabla() {
     this.cols = [""]
 
-    this.nuevoHttp.httpGetP('traerTodosLosItems')
-      //.toPromise()
+    this.miVehiculo.getListado()
       .then(data => {
+        console.log(data)
         this.items = data;
-        console.log(this.items)
       })
   }
 }
