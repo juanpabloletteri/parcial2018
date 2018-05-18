@@ -46,8 +46,8 @@ export class ServicioVehiculosService {
         return data;
       })
   }
-  borrarVehiculo(id): Promise<any> {
-    return this.miHttp.httpPostP('borrarVehiculo', { id: id })
+  borrarVehiculo(data): Promise<any> {
+    return this.miHttp.httpPostP('borrarVehiculo',data)
       .then(data => {
         console.log(data)
       })

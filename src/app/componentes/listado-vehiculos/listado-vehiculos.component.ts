@@ -25,7 +25,8 @@ export class ListadoVehiculosComponent implements OnInit {
   }
 
   Borrar(id) {
-    this.miVehiculo.borrarVehiculo(id)
+    var data = { id: id }
+    this.miVehiculo.borrarVehiculo(data)
       .then(data => {
         swal(
           'Felicidades!',
