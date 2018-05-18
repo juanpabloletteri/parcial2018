@@ -60,4 +60,11 @@ export class ServicioVehiculosService {
         return data;
       })
   }
+  buscarVehiculo(data): Promise<any> {
+    return this.miHttp.httpPostP('traerItemPorId', data)
+      .then(data => {
+        console.log(data);
+        return data;
+      })
+  }
 }

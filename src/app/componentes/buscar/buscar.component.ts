@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
-import { MiHttpServiceService } from '../../servicios/mi-http-service.service';
+import { ServicioVehiculosService } from '../../servicios/servicio-vehiculos.service';
 
 @Component({
   selector: 'app-buscar',
@@ -12,17 +11,16 @@ export class BuscarComponent implements OnInit {
   modelo: string;
   items: any;
 
-  constructor(public miHttp: Http, public nuevoHttp: MiHttpServiceService) { }
+  constructor(private miVehiculoServicio: ServicioVehiculosService) { }
 
   ngOnInit() {
   }
   buscar() {
-    this.miHttp.post('http://localhost/apiparcial2018/traerItemPorId', { modelo: this.modelo })
-      .toPromise()
+    var data = { modelo: this.modelo }
+    this.miVehiculoServicio.buscarVehiculo(data)
       .then(data => {
-
-        this.items = data.json();
-        console.log(this.items)
+        console.log(data)
+        this.items = data;
       })
   }
 }
