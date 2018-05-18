@@ -18,7 +18,7 @@ export class ListadoVehiculosComponent implements OnInit {
   cols: any;
 
 
-  constructor(private miVehiculo: ServicioVehiculosService, public rute: Router) { }
+  constructor(private miVehiculoServicio: ServicioVehiculosService, public rute: Router) { }
 
   ngOnInit() {
     this.DibujarTabla()
@@ -26,7 +26,7 @@ export class ListadoVehiculosComponent implements OnInit {
 
   Borrar(id) {
     var data = { id: id }
-    this.miVehiculo.borrarVehiculo(data)
+    this.miVehiculoServicio.borrarVehiculo(data)
       .then(data => {
         swal(
           'Felicidades!',
@@ -54,7 +54,7 @@ export class ListadoVehiculosComponent implements OnInit {
   DibujarTabla() {
     this.cols = [""]
 
-    this.miVehiculo.getListado()
+    this.miVehiculoServicio.getListado()
       .then(data => {
         console.log(data)
         this.items = data;

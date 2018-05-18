@@ -46,10 +46,18 @@ export class ServicioVehiculosService {
         return data;
       })
   }
+  altaVehiculo(data): Promise<any> {
+    return this.miHttp.httpPostP('altaItem', data)
+      .then(data => {
+        console.log(data);
+        return data;
+      })
+  }
   borrarVehiculo(data): Promise<any> {
-    return this.miHttp.httpPostP('borrarVehiculo',data)
+    return this.miHttp.httpPostP('borrarVehiculo', data)
       .then(data => {
         console.log(data)
+        return data;
       })
   }
 }
