@@ -35,6 +35,7 @@
     <th>Tipo</th>
     <th>Año</th>
     <th>Foto</th>
+    <th>Ver</th>
     <th>Borrar</th>
   </tr>
   <tr *ngFor="let item of items">
@@ -48,8 +49,12 @@
       <img src='{{item.foto}}' class="w3-image w3-circle" style="width:140%;max-width:100px">
     </td>
     <td>
+      <p-button label="Ver" (click)="Ver(item)"></p-button>
+    </td>
+    <td>
       <p-button label="Borrar" (click)="Borrar(item.id)"></p-button>
     </td>
   </tr>
-
 </table>
+<br>
+<app-un-vehiculo [unVehiculo]="vehiculoDelListado"></app-un-vehiculo>

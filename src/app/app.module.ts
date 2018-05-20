@@ -20,6 +20,7 @@ import { HomeComponent } from './componentes/home/home.component';
 import { ListadoVehiculosComponent } from './componentes/listado-vehiculos/listado-vehiculos.component';
 import { AltaComponent } from './componentes/alta/alta.component';
 import { BuscarComponent } from './componentes/buscar/buscar.component';
+import { UnVehiculoComponent } from './componentes/un-vehiculo/un-vehiculo.component';
 
 const config: Routes = [
   {
@@ -49,7 +50,8 @@ const config: Routes = [
     HomeComponent,
     ListadoVehiculosComponent,
     AltaComponent,
-    BuscarComponent
+    BuscarComponent,
+    UnVehiculoComponent
   ],
   imports: [
     BrowserModule,

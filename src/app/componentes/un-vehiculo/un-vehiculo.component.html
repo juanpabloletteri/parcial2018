@@ -1,0 +1,19 @@
+<p>
+  un-vehiculo works!
+</p>
+<table *ngIf="unVehiculo" class="w3-table w3-bordered w3-striped w3-border test w3-hoverable">
+  <tr class="w3-red">
+    <th>Modelo</th>
+    <th>Tipo</th>
+    <th>Año</th>
+    <th>Foto</th>
+  </tr>
+  <tr>
+    <td class="auto">{{unVehiculo.modelo}}</td>
+    <td class="moto">{{unVehiculo.tipo}}</td>
+    <td class="moto">{{unVehiculo.anio}}</td>
+    <td>
+      <img src='{{unVehiculo.foto}}' class="w3-image w3-circle" style="width:140%;max-width:100px">
+    </td>
+  </tr>
+</table>

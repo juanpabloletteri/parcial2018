@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DataTableModule } from 'primeng/datatable';
 import { TableModule } from 'primeng/table';
 //import { Http } from '@angular/http';
@@ -6,6 +6,7 @@ import { TableModule } from 'primeng/table';
 import { RouterModule, Route, Routes, Router } from '@angular/router';
 import swal from 'sweetalert2'
 import { ServicioVehiculosService } from '../../servicios/servicio-vehiculos.service';
+import { vehiculo } from '../../clases/vehiculo'
 
 @Component({
   selector: 'app-listado-vehiculos',
@@ -16,7 +17,7 @@ export class ListadoVehiculosComponent implements OnInit {
 
   items: any;
   cols: any;
-
+  vehiculoDelListado: vehiculo;
 
   constructor(private miVehiculoServicio: ServicioVehiculosService, public rute: Router) { }
 
@@ -59,5 +60,9 @@ export class ListadoVehiculosComponent implements OnInit {
         console.log(data)
         this.items = data;
       })
+  }
+
+  Ver(vehiculo) {
+    this.vehiculoDelListado = vehiculo;
   }
 }
