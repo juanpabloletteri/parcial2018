@@ -15,7 +15,7 @@ import { vehiculo } from '../../clases/vehiculo'
 })
 export class ListadoVehiculosComponent implements OnInit {
 
-  items: any;
+  vehiculos: any;
   cols: any;
   vehiculoDelListado: vehiculo;
 
@@ -34,7 +34,7 @@ export class ListadoVehiculosComponent implements OnInit {
           'Vehiculo eliminado exitosamente!',
           'success'
         )
-        this.items = null;
+        this.vehiculos = null;
         this.DibujarTabla()
         console.log(data);
       })
@@ -46,7 +46,7 @@ export class ListadoVehiculosComponent implements OnInit {
            'Vehiculo eliminado exitosamente!',
            'success'
          )
-         this.items = null;
+         this.vehiculos = null;
          this.DibujarTabla()
          console.log(data);
        })*/
@@ -58,7 +58,7 @@ export class ListadoVehiculosComponent implements OnInit {
     this.miVehiculoServicio.getListado()
       .then(data => {
         console.log(data)
-        this.items = data;
+        this.vehiculos = data;
       })
   }
 
