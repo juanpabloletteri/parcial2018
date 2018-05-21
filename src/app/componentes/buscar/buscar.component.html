@@ -1,10 +1,8 @@
-<p>
-  buscar works!
-</p>
+<br><br><br>
 <input type="text" [(ngModel)]="modelo">
-<button (click)="buscar()">Buscar</button>
+<p-button label="Buscar" (click)="buscar()"></p-button>
 
-<div class="w3-container">
+<div class="w3-container" *ngIf="items">
   <h2>Vehiculos encontrados</h2>
 
   <table class="w3-table w3-bordered w3-striped w3-border test w3-hoverable">

@@ -1,37 +1,10 @@
-<p>
-  listado-vehiculos works!
-</p>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<app-buscar (Cargado)="Cargado($event)">
 
-<!-- <h3 class="first">Tabla</h3>
-<p-table [value]="cols">
-  <ng-template pTemplate="header">
-    <tr>
-      <th>Modelo</th>
-      <th>Tipo</th>
-      <th>Año</th>
-      <th>Foto</th>
-      <th>Borrar</th>
-    </tr>
-  </ng-template>
-  <ng-template pTemplate="body">
-    <tr *ngFor="let vehiculo of vehiculos">
-      <td class="auto">{{vehiculo.modelo}}</td>
-      <td>{{vehiculo.tipo}}</td>
-      <td>{{vehiculo.anio}}</td>
-      <td>
-        <img src='{{vehiculo.foto}}' class="w3-image w3-circle">
-      </td>
-      <td>
-        <p-button label="Borrar" (click)="Borrar(vehiculo.id)"></p-button>
-      </td>
-    </tr>
-  </ng-template>
-</p-table> -->
-<app-buscar></app-buscar>
+</app-buscar>
 <br>
-<table class="w3-table w3-bordered">
-  <tr>
+<br>
+<table class="w3-table w3-bordered w3-striped w3-border test w3-hoverable">
+  <tr class="w3-red">
     <th>Modelo</th>
     <th>Tipo</th>
     <th>Año</th>
@@ -57,5 +30,5 @@
     </td>
   </tr>
 </table>
-<br>
+<br><br>
 <app-un-vehiculo [unVehiculo]="vehiculoDelListado"></app-un-vehiculo>

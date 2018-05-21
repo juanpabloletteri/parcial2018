@@ -65,4 +65,26 @@ export class ListadoVehiculosComponent implements OnInit {
   Ver(vehiculo) {
     this.vehiculoDelListado = vehiculo;
   }
+
+  Cargado(algo) {
+    let rta: boolean = false;
+    console.log(algo);
+    this.vehiculos.forEach(element => {
+      if (element.modelo == algo){
+        rta = true;
+        swal({
+          type: 'success',
+          title: 'Felicidades!',
+          text: 'Modelo encontrado'
+        })
+      }
+    });
+    if(rta == false){
+      swal({
+        type: 'error',
+        title: 'Mala suerte...',
+        text: 'Modelo no encontrado',
+      })
+    }
+  }
 }
