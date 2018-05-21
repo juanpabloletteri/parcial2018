@@ -18,6 +18,7 @@ export class ListadoVehiculosComponent implements OnInit {
   vehiculos: any;
   cols: any;
   vehiculoDelListado: vehiculo;
+  vehiculoDelListadoM: vehiculo;
 
   constructor(private miVehiculoServicio: ServicioVehiculosService, public rute: Router) { }
 
@@ -63,14 +64,19 @@ export class ListadoVehiculosComponent implements OnInit {
   }
 
   Ver(vehiculo) {
+    this.vehiculoDelListadoM = null;
     this.vehiculoDelListado = vehiculo;
+  }
+  Modificar(vehiculo) {
+    this.vehiculoDelListado = null;
+    this.vehiculoDelListadoM = vehiculo;
   }
 
   Cargado(algo) {
     let rta: boolean = false;
     console.log(algo);
     this.vehiculos.forEach(element => {
-      if (element.modelo == algo){
+      if (element.modelo == algo) {
         rta = true;
         swal({
           type: 'success',
@@ -79,7 +85,7 @@ export class ListadoVehiculosComponent implements OnInit {
         })
       }
     });
-    if(rta == false){
+    if (rta == false) {
       swal({
         type: 'error',
         title: 'Mala suerte...',

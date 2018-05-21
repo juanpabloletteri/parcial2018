@@ -67,4 +67,11 @@ export class ServicioVehiculosService {
         return data;
       })
   }
+ modificarVehiculo(data): Promise<any> {
+    return this.miHttp.httpPostP('modificarItem', data)
+      .then(data => {
+        console.log(data);
+        return data;
+      })
+  }
 }
