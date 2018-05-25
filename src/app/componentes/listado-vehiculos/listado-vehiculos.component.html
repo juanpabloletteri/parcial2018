@@ -10,9 +10,9 @@
     <th>Año</th>
     <th>Foto</th>
     <th>Ver</th>
-    <!-- 
+    <!--    -->
       <th>Modificar</th> 
-    -->
+ 
     <th>Borrar</th>
   </tr>
   <tr *ngFor="let vehiculo of vehiculos">
@@ -28,11 +28,11 @@
     <td>
       <p-button label="Ver" (click)="Ver(vehiculo)"></p-button>
     </td>
-    <!--
+    <!-- -->
     <td>
       <button pButton type="button" (click)="Modificar(vehiculo)" label="Modificar" class="ui-button-warning"></button>
     </td>
- -->
+
     <td>
       <button pButton type="button" (click)="Borrar(vehiculo.id)" label="Borrar" class="ui-button-danger"></button>
     </td>
